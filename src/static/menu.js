@@ -5,53 +5,21 @@ const router = [
         mate: {
             hidden: false,
             icon: 'widgets',
-            color: 'green'
+            color: 'green',
+            fPath: null
         },
-        component: () => import('../views/test1.vue'),
-    },
-    // {
-    //     path: '/test',
-    //     name: 'test',
-    //     mate: {
-    //         hidden: true,
-    //         icon: 'layers',
-    //         color: 'deep-orange'
-    //     },
-    //     children: [
-    //         {
-    //             path: '/dashboard',
-    //             name: 'dashboard',
-    //             mate: {
-    //                 hidden: false,
-    //                 icon: 'access_time',
-    //             },
-    //             children: [
-
-    //             ]
-    //         },
-    //         {
-    //             path: '/personal',
-    //             name: 'personal',
-    //             mate: {
-    //                 hidden: false,
-    //                 icon: 'adb'
-    //             },
-    //             children: [
-
-    //             ]
-    //         }
-    //     ]
-    // },
-    
+        component: '@/views/test1.vue',
+    },    
     {
         path: '/test2',
         name: 'test2',
         mate: {
             hidden: false,
             icon: 'view_carousel',
-            color: 'brown'
+            color: 'brown',
+            fPath: null
         },
-        component: () => import('../views/test2.vue'),
+        component: '@/views/test2.vue',
     },
     {
         path: '/test3',
@@ -59,9 +27,19 @@ const router = [
         mate: {
             hidden: false,
             icon: 'local_mall',
-            color: 'purple'
+            color: 'purple',
+            fPath: null
         },
-        component: () => import('../views/test3.vue'),
+        component: '@/views/test3.vue',
+    },
+    {
+        path: '/test4',
+        name: 'test4',
+        mate: {
+            hidden: false,
+            fPath: '/test2'
+        },
+        component: '@/views/test4.vue',
     },
 ]
 

@@ -5,21 +5,20 @@ import login from "../views/login.vue"
 Vue.use(VueRouter);
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
-  // console.dir(originalPush.call(this, location));
   return originalPush.call(this, location).catch(err => err)
 }
 
 const routes = [
   {
     path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
     name: 'login',
     component: login
   },
-  {
-    path: '/404',
-    name: '404',
-    component: () => import('../views/error/404'),
-  },
+
   {
     path: '/layout',
     name: 'layout',
@@ -28,6 +27,11 @@ const routes = [
     children:[
 
     ]
+  },
+  {
+    path: '*',
+    name: '404',
+    component: () => import('../views/error/404'),
   },
 ];
 

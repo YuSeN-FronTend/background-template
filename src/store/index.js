@@ -5,12 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    dynamicRoutes: []
+    dynamicRoutes: JSON.parse(sessionStorage.getItem('data'))||[],
+    // status: false
   },
   mutations: {
     DYNAMIC_ROUTES(state, routes) {
       state.dynamicRoutes = routes
-    }
+    },
+    // CHANGE_STATUS(state){
+    //   state.status = state
+    // }
   },
   getters: {
   },
